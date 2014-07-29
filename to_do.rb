@@ -3,11 +3,15 @@ require "./lib/list"
 
 @lists = []
 
+def test_me
+  "STUFF"
+end
+
 def main_menu
   list_counter = 0
   @lists.each do |list|
     list_counter += 1
-    puts "#{list_counter}. #{list.title}\n\n"
+    puts "#{list_counter}. #{list.title}\n"
   end
   puts "Press 'a' to add a new list.\nPress 'x' to exit the program."
   if @lists.length > 0
@@ -31,7 +35,7 @@ def task_menu
   puts @lists[@list_choice.to_i-1].title
   @lists[@list_choice.to_i-1].tasks.each do |task|
     task_counter += 1
-    puts "#{task_counter}. #{task.description}"
+    puts "#{task_counter}. #{task.description}\n"
   end
   puts "To select a task enter its cooresponding number.\nPress 'a' to add a new task to this list.\nPress 'd' to sort tasks by date.\nPress 'p' to sort tasks by priority.\nPress 'c' to view completed tasks.\nPress 'x' to return to the Main Menu"
   @task_choice = gets.chomp
